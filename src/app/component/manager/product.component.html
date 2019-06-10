@@ -1,0 +1,26 @@
+<div class="container">
+<h2>Product</h2>
+<table class="table table-hover table-sm" >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">priceRegular</th>
+      <th scope="col">priceSale</th>
+      <th scope="col">Action</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody *ngFor='let product of products'>
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.priceRegular}}</td>
+      <td>{{product.priceSale}}</td>
+      <td> <button type="button" class="btn btn-secondary" (click)="deleteProduct(product)"> Delete</button></td>
+      <td> <button type="button" class="btn btn-secondary"  routerLink="/product/{{product.id}}">Edit</button></td>
+    </tr>
+  </tbody>
+  <app-add-product [dataProduct]='product'></app-add-product>
+</table>
+</div>

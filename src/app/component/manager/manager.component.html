@@ -1,0 +1,27 @@
+<div class="container mb-4" style="margin-top: 200px">
+    <h2>Product</h2>
+    <table class="table table-hover table-sm" >
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">priceRegular</th>
+          <th scope="col">priceSale</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor='let product of products'>
+        <tr>
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.priceRegular}}$</td>
+          <td>{{product.priceSale}}$</td>
+          <td>  <button type="button" class="btn btn-outline-primary btn-sm"  routerLink="/product/{{product.id}}">Detail</button>
+                <button type="button" class="btn btn-outline-success btn-sm ml-2"  routerLink="/edit-product/{{product.id}}">Edit</button>
+                <button type="button" class="btn btn-outline-danger btn-sm ml-2" (click)="deleteProduct(product)"> Delete</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary"  routerLink="/add-product">Add Product</button>
+    </div>

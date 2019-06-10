@@ -1,0 +1,19 @@
+<div class="container mb-4" *ngIf="products" style="margin-top: 200px">
+  <div style="    margin:120px 0px 20px 0px;"></div>
+  <h2>The list of product</h2>
+    <div class="row">
+        <div class="col-3" *ngFor="let product of products">
+                <div class="card" style="width: 17rem;">
+                      <div style="width: 250px;height: 250px;" class="thumbnail mt-2 ml-2" routerLink="/product/{{product.id}}">
+                        <img src="{{product.image}}" class="card-img-top rounded mx-auto d-block" alt="Responsive image">
+                      </div>
+                        <div class="card-body">
+                          <h5 class="card-title">{{product.name}}</h5>
+                        <p>Price Sale: <span class="priceSale"> ${{product.priceSale}} </span></p>
+                        <p>Price Regular:  <span class="priceRegular"> ${{product.priceRegular}}</span></p>
+                          <button class="btn btn-primary mx-auto" routerLink="/product/{{product.id}}">View detail</button>
+                        </div>
+                      </div>
+        </div>
+    </div>
+</div>
